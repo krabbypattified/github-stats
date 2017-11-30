@@ -1,0 +1,17 @@
+{
+  "name": "github-stats",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "cross-env NODE_PATH=src react-scripts start",
+    "build": "cross-env NODE_PATH=src react-scripts build"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.1"
+  }
+}

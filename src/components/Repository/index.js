@@ -1,1 +1,1 @@
-export {default} from './RepositoryGQL'
+export {default} from './Repository'

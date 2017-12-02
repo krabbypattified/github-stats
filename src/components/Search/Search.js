@@ -1,18 +1,21 @@
 import React from 'react'
 
-import Wrapper from './Wrapper'
 import Bar from './Bar'
 import Logo from './Logo'
+import './Search.css'
 
 
-const Search = ({ match }) => {
+const Search = ({ fullscreen, text }) => {
   return (
-    <Wrapper fullscreen>
-      <Logo large/>
-      <Bar/>
+    <Wrapper fullscreen={fullscreen}>
+      <Logo fullscreen={fullscreen}/>
+      <Bar fullscreen={fullscreen} text={text}/>
     </Wrapper>
   )
 }
+
+
+const Wrapper = ({ children, fullscreen }) => <div className={'Search' + (fullscreen ? ' fullscreen' : '')}>{children}</div>
 
 
 export default Search

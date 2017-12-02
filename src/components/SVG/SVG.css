@@ -1,0 +1,9 @@
+.SVG div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SVG svg {
+  width: 100%;
+}

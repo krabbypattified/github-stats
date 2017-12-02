@@ -1,0 +1,33 @@
+* {
+  box-sizing : border-box;
+}
+
+html {
+  height : 100vh;
+}
+
+body {
+  height : 100%;
+}
+
+#root {
+  height : 100%;
+  color : #3a3a3a;
+  font-family : "Open Sans", sans-serif;
+  line-height : normal;
+  min-width: 300px;
+}
+
+input {
+  border : none;
+  padding : 0px;
+  margin : 0px;
+  height : auto;
+  width : 100%;
+  outline : none;
+}
+
+a {
+  color : #0366D6;
+  text-decoration : none;
+}

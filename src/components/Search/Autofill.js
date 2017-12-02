@@ -1,12 +1,32 @@
 import React from 'react'
-//import {graphql} from 'react-apollo'
+import fuzzy from 'fuzzy'
+import { Link } from 'react-router-dom'
 
-//import {autofill} from 'data/queries'
+import SVG from 'components/SVG'
+import openArrowSVG from 'assets/openArrow.svg'
+import { storage } from 'helpers'
 
 
-const Autofill = ({ query, data/*: {search}*/ }) => {
-  return <div>autofill: {query}</div>
+const Autofill = ({ query }) => {
+  if (!query) return null
+
+  let history = storage.get("autofill", [])
+  let matches = fuzzy
+      .filter(query, history)
+      .sort((a,b) => b.score - a.score)
+      .map(r => r.original).slice(0,5)
+
+  if (!matches.length) return null
+
+  return <div className="Autofill">{matches.map((m,i) => <Row text={m} key={i}/>)}</div>
 }
 
 
-export default Autofill//graphql(autofill)(Autofill)
+const Row = ({ text }) =>
+<Link className="Row" to={encodeURIComponent(text)}>
+  <div>{text}</div>
+  <SVG className="OpenArrowIcon" path={openArrowSVG}/>
+</Link>
+
+
+export default Autofill

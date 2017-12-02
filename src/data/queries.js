@@ -1,20 +1,14 @@
 import gql from 'graphql-tag'
 
 
-export const autofill = gql`
-query Autofill($query: String!, $limit: Int!) {
-  search(query: $query, limit: $limit) {
-    name
-  }
-}`
-
-
 export const searchResults = gql`
-query SearchResults {
+query SearchResults($query: String!, $limit: Int!) {
   search(query: $query, limit: $limit) {
     name
     description
-    owner
+    owner {
+      username
+    }
     tags
     forks { total }
     stars { total }

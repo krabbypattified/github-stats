@@ -1,0 +1,77 @@
+.Search {
+  display : flex;
+  padding : 1em;
+  align-items : center;
+}
+.Search:not(.fullscreen) {
+  justify-content : center;
+}
+
+.Search.fullscreen {
+  flex-direction : column;
+  padding-top : calc(40vh - 90px);
+  height : 100%;
+}
+
+.Search .Logo {
+  width : 125px;
+  margin : 0 2em 0 0;
+}
+
+.Search.fullscreen .Logo {
+  margin : 2em auto;
+  width : auto;
+}
+
+.Search .Bar {
+  box-shadow : 0px 1px 3px 0 rgba(0,0,0,.24);
+  width : 100%;
+  max-width : 550px;
+}
+
+.Search .Bar:hover {
+  box-shadow : 0px 1px 3px 1px rgba(0,0,0,.24);
+}
+
+.Search .Bar .InputComponents {
+  display : flex;
+  padding-left: 1em;
+}
+
+.Search .Bar .SearchIcon {
+  cursor : pointer;
+  padding : 12px 1em;
+}
+
+.Search.fullscreen .Bar .SearchIcon {
+  padding : 1em;
+}
+
+.Search .Bar .SearchIcon:hover svg #Desktop-HD {
+  fill : #0366D6;
+}
+
+.Search .Autofill {
+  width: 100%;
+  max-width : 550px;
+  padding : 1em;
+}
+
+.Search .Autofill .OpenArrowIcon {
+  width : 1em;
+  height : 1em;
+}
+
+.Search .Autofill .Row {
+  display : flex;
+  justify-content : space-between;
+  align-items : center;
+  width : 100%;
+  padding : 10px 0;
+  user-select : none;
+  cursor : pointer;
+}
+
+.Search .Autofill .Row:hover div {
+  text-decoration : underline;
+}

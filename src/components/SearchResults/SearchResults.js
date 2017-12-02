@@ -1,6 +1,7 @@
 import React from 'react'
 import {graphql} from 'react-apollo'
 
+import SVG from 'components/SVG'
 import Search from 'components/Search'
 import {searchResults} from 'data/queries'
 import forkSVG from 'assets/fork.svg'
@@ -8,6 +9,8 @@ import starSVG from 'assets/star.svg'
 import pullSVG from 'assets/pull.svg'
 import issueSVG from 'assets/issue.svg'
 import { storage } from 'helpers'
+
+import './SearchResults.css'
 
 
 const SearchResults = ({ match, data }) => {
@@ -19,7 +22,9 @@ const SearchResults = ({ match, data }) => {
   return (
     <React.Fragment>
       <Search text={query}/>
-      {data.loading ? [] : data.search.map((repo, i) => <SearchResult key={i} repo={repo}/>)}
+      <div className="SearchResults">
+        {data.loading ? [] : data.search.map((repo, i) => <SearchResult key={i} repo={repo}/>)}
+      </div>
     </React.Fragment>
   )
 }
@@ -38,13 +43,16 @@ const SearchResult = ({ repo }) =>
   </div>
   <div className="Description">{repo.description}</div>
   <div className="Tags">
-    {repo.tags.map((tag, i) => <Tag key={i}>tag</Tag>)}
+    {repo.tags.map((tag, i) => <Tag key={i}>{tag}</Tag>)}
   </div>
 </div>
 
 
 const Stat = ({ children, path }) =>
-<div>{children}</div>
+<div className="Stat">
+  <SVG path={path}/>
+  <div className="Count">{children}</div>
+</div>
 
 
 const Tag = ({ children }) =>

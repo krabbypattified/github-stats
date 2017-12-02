@@ -6,6 +6,8 @@ import SVG from 'components/SVG'
 import openArrowSVG from 'assets/openArrow.svg'
 import { storage } from 'helpers'
 
+import './Autofill.css'
+
 
 const Autofill = ({ query }) => {
   if (!query) return null

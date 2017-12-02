@@ -1,0 +1,28 @@
+.Search .Autofill {
+  width: 100%;
+  max-width : 550px;
+  padding : 8px 1em;
+}
+
+.Search.fullscreen .Autofill {
+  padding : 1em;
+}
+
+.Search .Autofill .OpenArrowIcon {
+  width : 1em;
+  height : 1em;
+}
+
+.Search .Autofill .Row {
+  display : flex;
+  justify-content : space-between;
+  align-items : center;
+  width : 100%;
+  padding : 10px 0;
+  user-select : none;
+  cursor : pointer;
+}
+
+.Search .Autofill .Row:hover div {
+  text-decoration : underline;
+}

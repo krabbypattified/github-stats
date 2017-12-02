@@ -1,0 +1,19 @@
+.SearchResults {
+  /*padding*/
+}
+
+.SearchResults .Header {
+  display: flex;
+}
+
+.SearchResults .Stats {
+  display: flex;
+}
+
+.SearchResults .Stat {
+  display: flex;
+}
+
+.SearchResults .Tags {
+  display: flex;
+}

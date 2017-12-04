@@ -2,12 +2,17 @@
   flex-basis : 120px;
   box-sizing: content-box;
   padding-right : 1.5em;
+  animation : .3s forwards Logo;
 }
 
 .Search.fullscreen .Logo {
-  flex-basis : auto;
-  width : 204px;
   padding-bottom : 3em;
+  animation : .3s forwards LogoFull;
+}
+
+.Search.fullscreen .Logo .SVG {
+  width : 204px;
+  height : 57px;
 }
 
 .Search.fullscreen .Logo div {
@@ -15,4 +20,23 @@
   color : #BABABA;
   font-size : 20px;
   text-align : center;
+  cursor : default;
+  user-select : none;
+}
+
+
+
+@keyframes Logo {
+  from {
+    transform : translateY(-200%);
+    opacity : .2;
+  }
+}
+
+
+@keyframes LogoFull {
+  from {
+    transform : translateY(-100%);
+    opacity : .2;
+  }
 }

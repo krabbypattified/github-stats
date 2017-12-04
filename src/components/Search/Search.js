@@ -7,10 +7,10 @@ import './Search.css'
 
 const Search = ({ fullscreen, text }) => {
   return (
-    <Wrapper fullscreen={fullscreen}>
-      <Logo fullscreen={fullscreen}/>
-      <Bar fullscreen={fullscreen}>{text}</Bar>
-    </Wrapper>
+      <Wrapper fullscreen={fullscreen}>
+        <Logo fullscreen={fullscreen} animationId='logo'/>
+        <Bar fullscreen={fullscreen} animationId='bar'>{text}</Bar>
+      </Wrapper>
   )
 }
 

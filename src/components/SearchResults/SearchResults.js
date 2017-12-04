@@ -28,9 +28,9 @@ const SearchResults = ({ match, data }) => {
       <div className="SearchResults">
         {data.loading
           ? [1,2,3,4,5].map(i=><PlaceholderResult key={i}/>)
-          : data.search.map((repo, i) => <Result key={i} repo={repo}/>)}
+          : data.search.map((repo, i) => <Result key={i} repo={repo} delay={i*75}/>)}
       </div>
-      <MadeWithLove/>
+      {data.loading || <MadeWithLove/>}
     </React.Fragment>
   )
 }
@@ -53,8 +53,8 @@ const PlaceholderResult = () =>
 </div>
 
 
-const Result = ({ repo }) =>
-<div className="Result">
+const Result = ({ repo, delay }) =>
+<div className="Result" style={{animationDelay:delay+'ms'}}>
   <div className="Header">
     <Link to={'/'+encodeURIComponent(repo.owner.username)+'/'+encodeURIComponent(repo.name)} className="Title">
       {repo.owner.username}/<b>{repo.name}</b>

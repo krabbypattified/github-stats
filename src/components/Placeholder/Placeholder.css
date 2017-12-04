@@ -21,10 +21,10 @@
   background : linear-gradient(to right, rgba(0, 0, 0, .06) 0%, rgba(255, 255, 255, .5) 50%, rgba(0, 0, 0, .06) 100%);
   background-size : 350px 100%;
   pointer-events : none;
-  animation : 2s linear infinite forwards shimmer;
+  animation : 2s linear infinite forwards Placeholder;
 }
 
-@keyframes shimmer {
+@keyframes Placeholder {
   0% {
     background-position: -350px 0;
   }

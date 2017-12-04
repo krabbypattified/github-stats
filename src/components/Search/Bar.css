@@ -4,7 +4,13 @@
   position : relative;
   height : 49px;
   flex : 1;
+  animation : .3s forwards Bar;
 }
+
+.Search.fullscreen .BarGhost {
+  animation : .3s forwards BarFull;
+}
+
 
 
 
@@ -28,7 +34,7 @@
 }
 
 .Search .Bar input {
-  padding-left: 1em;
+  padding: 15px 0 15px 1em;
 }
 
 .Search .Bar input::placeholder {
@@ -36,11 +42,29 @@
 }
 
 .Search .Bar .SearchIcon {
+  box-sizing : content-box;
   cursor : pointer;
-  margin : 14px 1em 14px 14px;
+  padding : 14px 1em 14px 14px;
   width : 21px;
 }
 
 .Search .Bar .SearchIcon:hover svg #Desktop-HD {
   fill : #0366D6;
+}
+
+
+
+@keyframes Bar {
+  from {
+    transform : translateY(-200%);
+    opacity : .2;
+  }
+}
+
+
+@keyframes BarFull {
+  from {
+    transform : translateY(200%);
+    opacity : .2;
+  }
 }

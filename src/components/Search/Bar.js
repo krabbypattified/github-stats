@@ -52,6 +52,7 @@ class Bar extends React.PureComponent {
         value={this.state.autofill}
         onChange={this.onChange}
         onKeyDown={this.onKeyDown}
+        onFocus={this.focusAutofill}
       />
       <SVG className="SearchIcon" path={searchSVG} onClick={this.search}/>
     </div>
@@ -62,13 +63,11 @@ class Bar extends React.PureComponent {
   componentDidMount() {
     this.mounted = true
     this.input = document.querySelector('.Search .Bar input')
-    listener.add(ReactDOM.findDOMNode(this), 'click', this.focusAutofill)
     listener.addNegative(ReactDOM.findDOMNode(this), 'click', this.blurAutofill)
   }
 
   componentWillUnmount() {
     this.mounted = false
-    listener.remove(ReactDOM.findDOMNode(this), 'click', this.focusAutofill)
     listener.removeNegative('click', this.blurAutofill)
   }
 

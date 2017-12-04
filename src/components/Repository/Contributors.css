@@ -7,13 +7,30 @@
   max-width : calc(18*54px);
 }
 
+.Repository .Contributors a {
+  display : inline-flex;
+}
+
 .Repository .Contributors .Picture {
   width : 40px;
   height : 40px;
   border-radius : 100px;
   margin : 7px;
+  animation : .3s forwards Contributors;
+  opacity : 0;
 }
 
 .Repository .Contributors .Picture:after {
   border-radius : 100px;
+}
+
+
+
+@keyframes Contributors {
+  from {
+    transform : scale(0);
+  }
+  to {
+    opacity : 1;
+  }
 }

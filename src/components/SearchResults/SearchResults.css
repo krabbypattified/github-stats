@@ -12,6 +12,8 @@
   width : 100%;
   max-width : 800px;
   padding : 1em;
+  opacity : 0;
+  animation : .2s forwards Result;
 }
 
 
@@ -82,4 +84,15 @@
 
 .SearchResults .Tag:active {
   background-color : #ccddee;
+}
+
+
+
+@keyframes Result {
+  from {
+    transform : translateY(50%);
+  }
+  to {
+    opacity : 1;
+  }
 }

@@ -12,7 +12,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
 
   if (data.loading) return (
     <Placeholder className="Chart">
-      <XYPlot height={300} width={700}/>
+      <XYPlot height={350} width={950}/>
     </Placeholder>
   )
 

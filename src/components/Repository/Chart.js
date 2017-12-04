@@ -41,6 +41,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
           />
           <YAxis/>
           <VerticalBarSeries
+            animation
             color="#58CB86"
             data={data}
           />
@@ -58,6 +59,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
   else {
 
     data = data.repository[source].nodes.map(({ time }) => Date.parse(time))
+    if (source === 'commits') data.reverse()
 
     let xmin  = data[0]
     let xmax  = data[data.length-1]
@@ -79,6 +81,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
           />
           <YAxis/>
           <AreaSeries
+            animation
             stroke="#58CB86"
             fill="rgba(88, 203, 134, 0.8)"
             data={chart.zip(xdata, ydata, 'x', 'y')}

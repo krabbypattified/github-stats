@@ -2,8 +2,8 @@ import gql from 'graphql-tag'
 
 
 export const searchResults = gql`
-query SearchResults($query: String!, $limit: Int!) {
-  search(query: $query, limit: $limit) {
+query SearchResults($query: String!) {
+  search(query: $query, limit: 10) {
     name
     description
     owner {
@@ -23,7 +23,9 @@ query Repository($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     name
     description
-    owner
+    owner {
+      username
+    }
     url
     contributors {
       picture
@@ -33,6 +35,7 @@ query Repository($owner: String!, $name: String!) {
       nodes {
         time
         author {
+          username
           picture
           url
         }
@@ -42,6 +45,7 @@ query Repository($owner: String!, $name: String!) {
       nodes {
         time
         author {
+          username
           picture
           url
         }
@@ -51,6 +55,7 @@ query Repository($owner: String!, $name: String!) {
       nodes {
         time
         author {
+          username
           picture
           url
         }

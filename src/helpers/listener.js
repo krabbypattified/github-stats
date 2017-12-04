@@ -8,6 +8,14 @@ export let listener = {
 
   removeNegative(type, callback) {
     document.removeEventListener(type, callback)
-  }
+  },
+
+  add(target, type, callback) {
+    target.addEventListener(type, callback)
+  },
+
+  remove(target, type, callback) {
+    target.removeEventListener(type, callback)
+  },
 
 }

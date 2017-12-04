@@ -3,6 +3,7 @@
   max-width : 550px;
   position : relative;
   height : 49px;
+  flex : 1;
 }
 
 
@@ -26,14 +27,18 @@
   height : 49px;
 }
 
-
 .Search .Bar input {
   padding-left: 1em;
 }
 
+.Search .Bar input::placeholder {
+  color : #C8C8C8;
+}
+
 .Search .Bar .SearchIcon {
   cursor : pointer;
-  padding : 14px 1em 14px 14px;
+  margin : 14px 1em 14px 14px;
+  width : 21px;
 }
 
 .Search .Bar .SearchIcon:hover svg #Desktop-HD {

@@ -1,13 +1,16 @@
 import React from 'react'
-import {graphql} from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { Link } from 'react-router-dom'
 
 import SVG from 'components/SVG'
-import Search from 'components/Search'
-import {searchResults} from 'data/queries'
+import Placeholder from 'components/Placeholder'
 import forkSVG from 'assets/fork.svg'
 import starSVG from 'assets/star.svg'
 import pullSVG from 'assets/pull.svg'
 import issueSVG from 'assets/issue.svg'
+import Search from 'components/Search'
+import MadeWithLove from 'components/MadeWithLove'
+import { searchResults } from 'data/queries'
 import { storage } from 'helpers'
 
 import './SearchResults.css'
@@ -23,17 +26,39 @@ const SearchResults = ({ match, data }) => {
     <React.Fragment>
       <Search text={query}/>
       <div className="SearchResults">
-        {data.loading ? [] : data.search.map((repo, i) => <SearchResult key={i} repo={repo}/>)}
+        {data.loading
+          ? [1,2,3,4,5].map(i=><PlaceholderResult key={i}/>)
+          : data.search.map((repo, i) => <Result key={i} repo={repo}/>)}
       </div>
+      <MadeWithLove/>
     </React.Fragment>
   )
 }
 
 
-const SearchResult = ({ repo }) =>
-<div className="Row">
+const PlaceholderResult = () =>
+<div className="Result">
   <div className="Header">
-    <div className="Title">{repo.owner.username}/{repo.name}</div>
+    <Placeholder className="Title">
+      krabbypattified/github-stats
+    </Placeholder>
+    <Placeholder className="Stats">
+      <Stat path={forkSVG}>10</Stat>
+      <Stat path={starSVG}>50</Stat>
+      <Stat path={pullSVG}>4</Stat>
+      <Stat path={issueSVG}>2</Stat>
+    </Placeholder>
+  </div>
+  <Placeholder className="Description">A really cool repository with a really cool description</Placeholder>
+</div>
+
+
+const Result = ({ repo }) =>
+<div className="Result">
+  <div className="Header">
+    <Link to={'/'+encodeURIComponent(repo.owner.username)+'/'+encodeURIComponent(repo.name)} className="Title">
+      {repo.owner.username}/<b>{repo.name}</b>
+    </Link>
     <div className="Stats">
       <Stat path={forkSVG}>{repo.forks.total}</Stat>
       <Stat path={starSVG}>{repo.stars.total}</Stat>
@@ -56,12 +81,11 @@ const Stat = ({ children, path }) =>
 
 
 const Tag = ({ children }) =>
-<div>{children}</div>
+<a href={'https://github.com/topics/'+children} target="_blank" className="Tag">{children}</a>
 
 
 export default graphql(searchResults, {
   options: p => ({variables: {
     query: decodeURIComponent(p.match.params.query),
-    limit: 2,
   }})
 })(SearchResults)

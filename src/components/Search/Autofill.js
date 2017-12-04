@@ -25,7 +25,7 @@ const Autofill = ({ query }) => {
 
 
 const Row = ({ text }) =>
-<Link className="Row" to={encodeURIComponent(text)}>
+<Link className="Row" to={'/'+encodeURIComponent(text)}>
   <div>{text}</div>
   <SVG className="OpenArrowIcon" path={openArrowSVG}/>
 </Link>

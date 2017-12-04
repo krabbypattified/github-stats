@@ -1,11 +1,13 @@
-.Search .Logo {
-  width : 125px;
-  margin : 0 2em 0 0;
+.Search:not(.fullscreen) .Logo {
+  flex-basis : 120px;
+  box-sizing: content-box;
+  padding-right : 1.5em;
 }
 
 .Search.fullscreen .Logo {
-  width : auto;
-  margin : 0 auto 3em auto;
+  flex-basis : auto;
+  width : 204px;
+  padding-bottom : 3em;
 }
 
 .Search.fullscreen .Logo div {
@@ -13,5 +15,4 @@
   color : #BABABA;
   font-size : 20px;
   text-align : center;
-  margin-top: 1em;
 }

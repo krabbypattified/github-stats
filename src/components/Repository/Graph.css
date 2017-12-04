@@ -1,0 +1,70 @@
+.Repository .Graph {
+  margin : 3em 0;
+}
+
+
+
+.Repository .Graph .Tabs {
+  display : flex;
+  justify-content : center;
+}
+
+.Repository .Graph .Tab {
+  font-weight : 600;
+  color : #C6C6C6;
+  margin : 0 10px;
+  user-select : none;
+  cursor : pointer;
+}
+
+.Repository .Graph .Tab:hover {
+  color : #0366D6;
+}
+
+.Repository .Graph .Tab[data-selected="true"] {
+  color : #0366D6;
+  cursor : auto;
+}
+
+
+
+.Repository .Graph .Chart {
+  margin : 30px 0;
+}
+
+
+
+.Repository .Graph .Toggler {
+  display : flex;
+  justify-content : center;
+}
+
+.Repository .Graph .Toggler .Button {
+  font-size : 14px;
+  padding : 5px 10px;
+  border : 1px solid #E9E9E9;
+  margin-right : -1px;
+  user-select : none;
+  cursor : pointer;
+}
+
+.Repository .Graph .Toggler .Button:hover {
+  background-color : #EEE;
+}
+
+.Repository .Graph .Toggler .Button[data-selected="true"] {
+  color : white;
+  font-weight : 600;
+  background-color : #0366D6;
+  border-color : #0366D6;
+  cursor : auto;
+}
+
+.Repository .Graph .Toggler .Button:first-child {
+  border-radius : 4px 0 0 4px;
+}
+
+.Repository .Graph .Toggler .Button:last-child {
+  border-radius : 0 4px 4px 0;
+  margin-right : 0;
+}

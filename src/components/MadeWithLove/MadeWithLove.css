@@ -1,0 +1,21 @@
+.MadeWithLove {
+  margin-top : auto;
+  display : flex;
+  width : 100%;
+  justify-content : center;
+  align-items : center;
+  padding : 2.5em;
+  font-size : 14px;
+}
+
+.MadeWithLove SVG {
+  max-width : 20px;
+}
+
+.MadeWithLove > * {
+  margin : 0 4px;
+}
+
+.MadeWithLove b {
+  font-weight : 700;
+}

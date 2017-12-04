@@ -1,3 +1,6 @@
 export * from './debounce'
 export * from './storage'
 export * from './listener'
+export * from './random'
+export * from './chart'
+export * from './switchy'

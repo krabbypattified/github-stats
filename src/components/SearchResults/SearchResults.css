@@ -1,19 +1,85 @@
 .SearchResults {
-  /*padding*/
+  width : 100%;
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  padding-top : 1em;
 }
+
+
+
+.SearchResults .Result {
+  width : 100%;
+  max-width : 800px;
+  padding : 1em;
+}
+
+
 
 .SearchResults .Header {
-  display: flex;
+  display : flex;
+  justify-content : space-between;
+  align-items : center;
 }
 
+.SearchResults .Title {
+  font-size : 19px;
+}
+
+.SearchResults .Title b {
+  font-weight : 700;
+}
+
+
+
 .SearchResults .Stats {
-  display: flex;
+  display : flex;
 }
 
 .SearchResults .Stat {
-  display: flex;
+  display : flex;
+  align-items : center;
+  margin-left : 10px;
+  color : #888888;
+  font-size : 15px;
 }
 
+.SearchResults .Stat .Count {
+  margin-left : 3px;
+  user-select : none;
+}
+
+.SearchResults .Stat .SVG {
+  width : 14px;
+}
+
+
+
+.SearchResults .Description {
+  margin : 10px 0 15px 0;
+  user-select : text;
+}
+
+
+
 .SearchResults .Tags {
-  display: flex;
+  display : flex;
+  user-select : none;
+}
+
+.SearchResults .Tag {
+  font-size : 14px;
+  background-color : #F1F8FF;
+  padding : 5px 10px;
+  margin-right : 6px;
+  color : #0366D6;
+  border-radius : 2px;
+}
+
+.SearchResults .Tag:hover {
+  background-color : #ddeeff;
+}
+
+.SearchResults .Tag:active {
+  background-color : #ccddee;
 }

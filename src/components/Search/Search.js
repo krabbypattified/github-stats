@@ -9,7 +9,7 @@ const Search = ({ fullscreen, text }) => {
   return (
     <Wrapper fullscreen={fullscreen}>
       <Logo fullscreen={fullscreen}/>
-      <Bar fullscreen={fullscreen} text={text}/>
+      <Bar fullscreen={fullscreen}>{text}</Bar>
     </Wrapper>
   )
 }

@@ -1,0 +1,9 @@
+.Repository .Title {
+  font-size : 23px;
+  color : #C6C6C6;
+}
+
+.Repository .Title b {
+  font-weight : 600;
+  color : #0366D6;
+}

@@ -10,7 +10,7 @@ import SearchResults from 'components/SearchResults'
 import Repository from 'components/Repository'
 
 
-const httpLink = new HttpLink({uri: 'http://localhost:9000'})
+const httpLink = new HttpLink({uri: 'http://github-stats-api.herokuapp.com/'})
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()

@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build"
+    "build": "cross-env NODE_PATH=src react-scripts build",
+    "deploy": "yarn build && aws s3 sync build s3://github-stats.gaberogan.me/"
   },
   "devDependencies": {
     "cross-env": "^5.1.1",

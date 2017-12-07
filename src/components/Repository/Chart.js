@@ -85,7 +85,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
             stroke="#58CB86"
             fill="rgba(88, 203, 134, 0.8)"
             data={chart.zip(xdata, ydata, 'x', 'y')}
-            curve="curveNatural"
+            curve="curveLinear"
           />
         </XYPlot>
       </div>

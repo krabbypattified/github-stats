@@ -20,6 +20,10 @@
   opacity : 0;
 }
 
+.Repository .Contributors .Picture:hover {
+  transform : scale(1.1);
+}
+
 .Repository .Contributors .Picture:after {
   border-radius : 100px;
 }

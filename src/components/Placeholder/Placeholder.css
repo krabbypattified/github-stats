@@ -18,17 +18,22 @@
   left : 0;
   right : 0;
   pointer-events : none;
-  background : linear-gradient(to right, rgba(0, 0, 0, .06) 0%, rgba(255, 255, 255, .5) 50%, rgba(0, 0, 0, .06) 100%);
-  background-size : 350px 100%;
+  background : linear-gradient(to right, rgba(0, 0, 0, .06) 0%, #f8f8f8 15%, rgba(0, 0, 0, .06) 30%);
+  background-size : 200vw 100%;
+  background-attachment: fixed;
   pointer-events : none;
-  animation : 2s linear infinite forwards Placeholder;
+  animation : 1.3s linear infinite forwards Placeholder;
+  border-radius : 5px;
 }
 
 @keyframes Placeholder {
   0% {
-    background-position: -350px 0;
+    background-position: -100vw 0;
+  }
+  60% {
+    background-position: 100vw 0;
   }
   100% {
-    background-position: 350px 0;
+    background-position: 100vw 0;
   }
 }

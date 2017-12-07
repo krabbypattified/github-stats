@@ -1,5 +1,5 @@
 import React from 'react'
-import {XYPlot, AreaSeries, VerticalBarSeries, XAxis, YAxis} from 'react-vis'
+import {AreaSeries, VerticalBarSeries, XAxis, YAxis, FlexibleXYPlot} from 'react-vis'
 import 'react-vis/dist/style.css'
 
 import Placeholder from 'components/Placeholder'
@@ -12,7 +12,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
 
   if (data.loading) return (
     <Placeholder className="Chart">
-      <XYPlot height={350} width={950}/>
+      <FlexibleXYPlot height={350}/>
     </Placeholder>
   )
 
@@ -28,12 +28,11 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
 
     return (
       <div className="Chart">
-        <XYPlot
+        <FlexibleXYPlot
           margin={{bottom: 100}}
           xType="ordinal"
           yDomain={[ymin,ymax]}
           height={350}
-          width={950}
           >
           <XAxis
             tickLabelAngle={-90}
@@ -45,7 +44,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
             color="#58CB86"
             data={data}
           />
-        </XYPlot>
+        </FlexibleXYPlot>
       </div>
     )
     /* TODO Images as labels!
@@ -70,9 +69,8 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
 
     return (
       <div className="Chart">
-        <XYPlot
+        <FlexibleXYPlot
           height={350}
-          width={950}
           xType="time"
           yDomain={[ymin, ymax]}>
           <XAxis
@@ -87,7 +85,7 @@ const Chart = ({ data, source='commits', byPerson=false}) => {
             data={chart.zip(xdata, ydata, 'x', 'y')}
             curve="curveLinear"
           />
-        </XYPlot>
+        </FlexibleXYPlot>
       </div>
     )
 

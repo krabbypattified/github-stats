@@ -27,7 +27,7 @@ const SearchResults = ({ match, data }) => {
       <Search text={query}/>
       <div className="SearchResults">
         {data.loading
-          ? [1,2,3,4,5].map(i=><PlaceholderResult key={i}/>)
+          ? [1,2,3,4,5,6,7,8,9,10].map(i=><PlaceholderResult key={i}/>)
           : data.search.map((repo, i) => <Result key={i} repo={repo} delay={i*75}/>)}
       </div>
       {data.loading || <MadeWithLove/>}

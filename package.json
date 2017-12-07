@@ -1,7 +1,6 @@
 {
   "name": "github-stats",
   "version": "0.1.0",
-  "homepage" : "http://github-stats.gaberogan.me",
   "private": true,
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.2",
@@ -24,7 +23,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build && rimraf docs && cp -R build docs && echo 'uconn-bus.gaberogan.me' > docs/CNAME"
+    "build": "cross-env NODE_PATH=src react-scripts build"
   },
   "devDependencies": {
     "cross-env": "^5.1.1",

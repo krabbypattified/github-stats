@@ -5,6 +5,7 @@
   align-items : center;
   flex-wrap : wrap;
   max-width : calc(18*54px);
+  width : calc(100vw + 75px);
 }
 
 .Repository .Contributors a {

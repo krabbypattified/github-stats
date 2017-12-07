@@ -26,6 +26,8 @@
 
 .SearchResults .Title {
   font-size : 19px;
+  overflow : hidden;
+  text-overflow : ellipsis;
 }
 
 .SearchResults .Title b {
@@ -36,6 +38,12 @@
 
 .SearchResults .Stats {
   display : flex;
+}
+
+@media (max-width: 500px) {
+  .SearchResults .Stats {
+    display : none;
+  }
 }
 
 .SearchResults .Stat {
